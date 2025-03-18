@@ -31,9 +31,11 @@ kubectl get pods -n kubereport
 
 | Parameter                    | Description                                                            | Default Value             |
 |------------------------------|------------------------------------------------------------------------|---------------------------|
-| `report.type`                | Type of report to generate (e.g., detailed, general)                  | `detailed`                |
-| `report.schedulable.enabled` | Enable or disable scheduled reporting                                   | `true`                    |
-| `report.schedulable.schedule`| Cron schedule for generating reports (in cron format)                 | `* * * * *`               |
+| `report.type`                | Type of report to generate (e.g., detailed, general, release)          | `detailed`                |
+| `report.schedulable.enabled` | Enable or disable scheduled reporting                                  | `true`                    |
+| `report.schedulable.schedule`| Cron schedule for generating reports (in cron format)                  | `* * * * *`               |
+| `report.releaseversion`      | Specify the release version for release report(e.g., v1.0.0).          | `""`               |
+| `report.teamlabel`           | Specify the team metadata label given in the Deployment definition.    | `""`               |
 
 ### SMTP Configuration
 

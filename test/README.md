@@ -32,12 +32,14 @@ Before starting, ensure you have the following installed:
     You can customize the `values.yaml` file for your deployment. Below is a sample configuration:
 
     ```yaml
-    # Reporting Configuration [Default values]
+    # Reporting Configuration
     report:
-      type: "detailed"
+      type: "release"
       schedulable:
         enabled: true
         schedule: "* * * * *"
+      releaseversion: "v1.0.0"
+      teamlabel: app
 
     # SMTP Configuration
     smtp:
