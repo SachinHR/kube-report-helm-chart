@@ -34,10 +34,12 @@ Before starting, ensure you have the following installed:
     ```yaml
     # Reporting Configuration
     report:
-      type: "detailed"
+      type: "release"
       schedulable:
         enabled: true
         schedule: "* * * * *"
+      releaseversion: "v1.0.0"
+      teamlabel: app
 
     # SMTP Configuration
     smtp:

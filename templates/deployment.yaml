@@ -26,8 +26,16 @@ spec:
       containers:
         - name: kubereport
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: "{{ .Values.image.pullPolicy }}"
           args:
+            {{- if ne .Values.report.type "release" }}
             - --report=$(REPORT)
+            {{- else }}
+            - --release=$(RELEASEVERSION)
+            {{- end }}
+            {{ if .Values.report.teamlabel }}
+            - --team-label=$(TEAMLABEL)
+            {{- end }}
             {{- if .Values.report.schedulable.enabled }}
             - --schedule=$(SCHEDULE)
             {{- end }}
@@ -47,11 +55,27 @@ spec:
                 configMapKeyRef:
                   name: kubereport-config
                   key: report
+            {{- if .Values.report.schedulable.enabled }}
             - name: SCHEDULE
               valueFrom:
                 configMapKeyRef:
                   name: kubereport-config
                   key: schedule
+            {{- end }}
+            {{- if and .Values.report.releaseversion (eq .Values.report.type "release") }}
+            - name: RELEASEVERSION
+              valueFrom:
+                configMapKeyRef:
+                  name: kubereport-config
+                  key: releaseversion
+            {{- end }}
+            {{- if and .Values.report.teamlabel (eq .Values.report.type "release") }}
+            - name: TEAMLABEL
+              valueFrom:
+                configMapKeyRef:
+                  name: kubereport-config
+                  key: teamlabel
+            {{- end }}
             {{- if .Values.smtp.enabled }}
             - name: SENDER
               valueFrom:

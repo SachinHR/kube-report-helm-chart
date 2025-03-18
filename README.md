@@ -19,15 +19,23 @@ helm repo update
 helm install kubereport kubereport/kubereport
 ```
 
+Verify the Installation
+
+```bash
+kubectl get pods -n kubereport
+```
+
 ## Configuration Parameters
 
 ### Report Configuration
 
 | Parameter                    | Description                                                            | Default Value             |
 |------------------------------|------------------------------------------------------------------------|---------------------------|
-| `report.type`                | Type of report to generate (e.g., detailed, general)                  | `detailed`                |
-| `report.schedulable.enabled` | Enable or disable scheduled reporting                                   | `true`                    |
-| `report.schedulable.schedule`| Cron schedule for generating reports (in cron format)                 | `* * * * *`               |
+| `report.type`                | Type of report to generate (e.g., detailed, general, release)          | `detailed`                |
+| `report.schedulable.enabled` | Enable or disable scheduled reporting                                  | `true`                    |
+| `report.schedulable.schedule`| Cron schedule for generating reports (in cron format)                  | `* * * * *`               |
+| `report.releaseversion`      | Specify the release version for release report(e.g., v1.0.0).          | `""`               |
+| `report.teamlabel`           | Specify the team metadata label given in the Deployment definition.    | `""`               |
 
 ### SMTP Configuration
 
@@ -75,9 +83,4 @@ If KubeReport enhances your Kubernetes experience, please consider supporting us
 
 ## Community & Support
 
-Want to discuss KubeReport features with other users or show your support for this tool?
-
-- **Invite**: Get your [KubeReport Slack Invite](https://join.slack.com/t/newworkspace-lnq1467/shared_invite/zt-2rh7j3whw-We_16ybaeK5tNjRXGenX_Q).
-- **Slack Channel**: Join the conversation on [KubeReport Slack](https://kubesuite.slack.com/archives/C07PPLEUR7B).
-
-You can also connect with us on [LinkedIn](https://www.linkedin.com/company/kubesuite/) to stay updated and engage with the community.
+You can connect with us on [LinkedIn](https://www.linkedin.com/company/kubesuite/) to stay updated and engage with the community.
