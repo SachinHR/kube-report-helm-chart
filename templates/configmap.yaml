@@ -8,6 +8,12 @@ data:
   {{- if .Values.report.schedulable.enabled }}
   schedule: {{ .Values.report.schedulable.schedule | quote }}
   {{- end }}
+  {{- if and .Values.report.releaseversion (eq .Values.report.type "release") }}
+  releaseversion: {{ .Values.report.releaseversion | quote }}
+  {{- end }}
+  {{- if and .Values.report.teamlabel (eq .Values.report.type "release") }}
+  teamlabel: {{ .Values.report.teamlabel | quote }}
+  {{- end }}
   {{- if .Values.smtp.enabled }}
   sender: {{ .Values.smtp.sender | quote }}
   recipient: {{ .Values.smtp.recipient | quote }}
