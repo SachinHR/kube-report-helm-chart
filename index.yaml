@@ -3,9 +3,9 @@ entries:
   kubereport:
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2025-03-18T17:55:38.693535+05:30"
+    created: "2025-03-19T10:44:14.980859+05:30"
     description: A Helm chart for Kube Report
-    digest: 74a281de5bf3f15b7bf008e3ed7d509bc097abd3e918ee5b65a22718b8077c28
+    digest: b72b1251112ca5306c0809ae2b1736bc1f133d9f9f77e3a60b9cc5fa3aa174dc
     name: kubereport
     type: application
     urls:
@@ -13,7 +13,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2025-03-18T17:55:38.69193+05:30"
+    created: "2025-03-19T10:44:14.978518+05:30"
     description: A Helm chart for Kube Report
     digest: 17bc56967fc8bb6f96b85bedba8c215ec2178d6d630c812c06eb56d36593f953
     name: kubereport
@@ -21,4 +21,4 @@ entries:
     urls:
     - https://kubesuiteorg.github.io/kubereport-helm-chart/kubereport-1.0.0.tgz
     version: 1.0.0
-generated: "2025-03-18T17:55:38.690492+05:30"
+generated: "2025-03-19T10:44:14.976863+05:30"
