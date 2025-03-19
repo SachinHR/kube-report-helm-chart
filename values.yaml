@@ -12,22 +12,22 @@ imagePullSecrets: []
 
 # Reporting Configuration
 report:
-  type: "release" # Options: general, detailed, release
+  type: "detailed" # Options: general, detailed, release
   schedulable:
     enabled: true
     schedule: "* * * * *"
-  releaseversion: "v1.0.0" # Required only if type is 'release'
-  teamlabel: team  # Optional and Required only if type is 'release'
+  #releaseversion: "v1.0.0" # Required only if type is 'release'
+  #teamlabel: app  # Optional and Required only if type is 'release'
 
 # SMTP Configuration
 smtp:
-  enabled: true
+  enabled: false
   server: "smtp.gmail.com"
   port: "587"
   useTLS: "true"
   recipient: "example@example.com"
-  sender: "sachinhr.ram@gmail.com"
-  password: "sdaridfdrnyzrtlt"
+  sender: "sender@example.com"
+  password: "XXXXXXX"
   subject: "Kubernetes Cluster Report"
   body: |
     Hi,
