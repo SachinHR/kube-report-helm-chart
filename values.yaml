@@ -4,7 +4,7 @@
 
 image:
   repository: kubesuite/kubereport
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: "latest"
 
 # Image Pull Secrets
@@ -12,22 +12,22 @@ imagePullSecrets: []
 
 # Reporting Configuration
 report:
-  type: "detailed" # Options: general, detailed, release
+  type: "release" # Options: general, detailed, release
   schedulable:
     enabled: true
     schedule: "* * * * *"
-  #releaseversion: "v1.0.0" # Required only if type is 'release'
-  #teamlabel: app  # Optional and Required only if type is 'release'
+  releaseversion: "v1.0.0" # Required only if type is 'release'
+  teamlabel: team  # Optional and Required only if type is 'release'
 
 # SMTP Configuration
 smtp:
-  enabled: false
+  enabled: true
   server: "smtp.gmail.com"
   port: "587"
   useTLS: "true"
   recipient: "example@example.com"
-  sender: "sender@example.com"
-  password: "XXXXXXX"
+  sender: "sachinhr.ram@gmail.com"
+  password: "sdaridfdrnyzrtlt"
   subject: "Kubernetes Cluster Report"
   body: |
     Hi,
