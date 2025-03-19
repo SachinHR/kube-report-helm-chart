@@ -4,7 +4,7 @@
 
 image:
   repository: kubesuite/kubereport
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: "latest"
 
 # Image Pull Secrets
